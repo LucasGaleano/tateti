@@ -13,6 +13,8 @@ class Table():
         iter_players = self.players(players)
         while True:
             self.turn(next(iter_players))
+            if(self.isFull()):
+                break
             if(self.checkWinner()):
                 break
         self.printWinner()
@@ -29,7 +31,7 @@ class Table():
 
     def printWinner(self):
         self.refresh()
-        print('Winner: ' + self.checkWinner())
+        print('Winner: ' + str(self.checkWinner()))
 
     def refresh(self):
         os.system('reset')
@@ -49,6 +51,10 @@ class Table():
              if ' ' in self.table[i]:
                 return (i+1)*3-(2-self.table[i].index(' '))
 
+    def isFull(self):
+        return all([' ' not in self.table[i] for i in range(3)])
+
+
     # TODO terrible arbol de ifs jajaja despues refactorizo
     def checkWinner(self):
         for i in range(3):
@@ -66,9 +72,10 @@ class Table():
                 if self.table[1][1] == ' ':
                     return None
                 return self.table[1][1]
+        return None
 
     def checkColumn(self, column):
-        return self.table[column][0]== self.table[column][1] and self.table[column][1] == self.table[column][2]
+        return self.table[column][0] == self.table[column][1] and self.table[column][1] == self.table[column][2]
 
     def checkRow(self, row):
         return self.table[0][row] == self.table[1][row] and self.table[1][row] == self.table[2][row]
