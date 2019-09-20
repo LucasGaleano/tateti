@@ -9,15 +9,9 @@ class Table():
     def __init__(self, table = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]):
         self.table = table
 
-
-    def start():
-        self.nextMove()
-        self.refresh()
-
     def turn(self, player):
         self.refresh()
         player.move(self)
-        #self.checkWinner()
 
     def print(self):
         for i in range(3):
@@ -31,8 +25,8 @@ class Table():
         os.system('reset')
         self.print()
 
-    def fill(self,blockNumber, character):
-        self.table[self.row(blockNumber)][self.column(blockNumber)] = character
+    def fill(self, position, character):
+        self.table[self.row(position)][self.column(position)] = character
 
     def column(self, number):
         return math.floor((number%3)-1)
