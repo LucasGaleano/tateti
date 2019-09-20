@@ -1,22 +1,34 @@
 
 import os
 import math
+import random
 
 class Table():
 
     def __init__(self, table = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]):
         self.table = table
 
+    def start(self, players):
+        random.shuffle(players)
+        iter_players = self.players(players)
+        while True:
+            self.turn(next(iter_players))
+            if(self.checkWinner()):
+                break
+        self.printWinner()
+
+
     def turn(self, player):
         self.refresh()
         player.move(self)
 
     def print(self):
-        for i in range(3):
+        print()
+        for i in sorted(range(3),reverse=True):
             print(str(self.table[i][0]) + '|' + str(self.table[i][1]) + '|' + str(self.table[i][2]))
 
     def printWinner(self):
-        table.refresh()
+        self.refresh()
         print('Winner: ' + self.checkWinner())
 
     def refresh(self):
@@ -54,3 +66,8 @@ class Table():
 
     def checkRow(self, row):
         return self.table[0][row]== self.table[1][row] and self.table[1][row] == self.table[2][row]
+
+    def players(self, players):
+        while True:
+            for player in players:
+                yield player
