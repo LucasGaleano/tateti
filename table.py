@@ -49,6 +49,7 @@ class Table():
              if ' ' in self.table[i]:
                 return (i+1)*3-(2-self.table[i].index(' '))
 
+    # TODO terrible arbol de ifs jajaja despues refactorizo
     def checkWinner(self):
         for i in range(3):
             if self.checkColumn(i):
@@ -61,11 +62,19 @@ class Table():
                     return None
                 return self.table[0][i]
 
+            if self.checkDiagonal():
+                if self.table[1][1] == ' ':
+                    return None
+                return self.table[1][1]
+
     def checkColumn(self, column):
         return self.table[column][0]== self.table[column][1] and self.table[column][1] == self.table[column][2]
 
     def checkRow(self, row):
-        return self.table[0][row]== self.table[1][row] and self.table[1][row] == self.table[2][row]
+        return self.table[0][row] == self.table[1][row] and self.table[1][row] == self.table[2][row]
+
+    def checkDiagonal(self):
+        return (self.table[0][0] == self.table[1][1] and self.table[1][1] == self.table[2][2]) or (self.table[2][0] == self.table[1][1] and self.table[1][1] == self.table[0][2])
 
     def players(self, players):
         while True:
