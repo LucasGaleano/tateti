@@ -13,7 +13,7 @@ Divertido juego para todos.
 `./tateti`
 
 ## Como jugar
-Cuando sea tu turno utlizar los numeros para seleccion la posicion
+Cuando sea tu turno utlizar los numeros para seleccion la posicion\
 7|8|9\
 4|5|6\
 1|2|3\
