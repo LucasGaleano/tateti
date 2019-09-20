@@ -20,5 +20,4 @@ Cuando sea tu turno utlizar los numeros para seleccion la posicion\
 
 aclaraciones
 ---
-Por ahora el otro jugador solo tiene el nivel facil\
-, o sea, que el otro jugador mueve casi al azar
+Por ahora el otro jugador solo tiene el nivel facil, o sea, que el otro jugador mueve casi al azar.
