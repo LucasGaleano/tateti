@@ -1,3 +1,5 @@
+import table
+
 class Player():
 
     def __init__(self, typeMove, character):
