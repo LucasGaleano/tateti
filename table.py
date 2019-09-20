@@ -4,8 +4,6 @@ import math
 
 class Table():
 
-    table = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
-
     def __init__(self, table = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]):
         self.table = table
 
