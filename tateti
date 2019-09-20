@@ -1,0 +1,15 @@
+#! /usr/bin/env python3
+
+from table import Table
+from player import Player
+from move import *
+
+player1 = Player(move_manual,'X')
+
+table = Table()
+#table.addPlayer(player1)
+#table.start()
+
+while True:
+    table.refresh()
+    player1.move(table)
