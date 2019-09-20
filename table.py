@@ -6,6 +6,9 @@ class Table():
 
     table = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
 
+    def __init__(self, table = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]):
+        self.table = table
+
 
     def start():
         self.refresh()
@@ -28,7 +31,7 @@ class Table():
     def row(self, number):
         return math.floor((number-1)/3)
 
-    def findFirstPositionFree():
+    def findFirstPositionFree(self):
          for i in range(3):
-             if (table[i].index(' '))
-                return table[i].index(' ') * (i+1)
+             if ' ' in self.table[i]:
+                return (self.table[i].index(' ')+1) * (i+1)
