@@ -34,4 +34,4 @@ class Table():
     def findFirstPositionFree(self):
          for i in range(3):
              if ' ' in self.table[i]:
-                return (self.table[i].index(' ')+1) * (i+1)
+                return (i+1)*3-(2-self.table[i].index(' '))

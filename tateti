@@ -2,9 +2,10 @@
 
 from table import Table
 from player import Player
-from move import *
+from move import move_manual, move_easyAI
 
 player1 = Player(move_manual,'X')
+playerAI = Player(move_easyAI,'O')
 
 table = Table()
 #table.addPlayer(player1)
@@ -13,3 +14,5 @@ table = Table()
 while True:
     table.refresh()
     player1.move(table)
+    table.refresh()
+    playerAI.move(table)
