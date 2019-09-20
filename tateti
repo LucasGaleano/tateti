@@ -8,11 +8,10 @@ player1 = Player(move_manual,'X')
 playerAI = Player(move_easyAI,'O')
 
 table = Table()
-#table.addPlayer(player1)
-#table.start()
-
 while True:
-    table.refresh()
-    player1.move(table)
-    table.refresh()
-    playerAI.move(table)
+    table.turn(player1)
+    table.turn(playerAI)
+    if(table.checkWinner()):
+        break
+
+table.printWinner()
